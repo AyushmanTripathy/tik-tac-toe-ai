@@ -71,6 +71,10 @@
 </script>
 
 <main>
+  <header>
+    <h1>the unbeatable tik tac toe ai</h1>
+    <p>using minmax algorithm</p>
+  </header>
   <h3 contenteditable bind:innerHTML={warning} />
   <button on:click={gameEnded ? reset() : loop()}>
     {gameEnded ? "Reset" : "Pass"}
@@ -86,6 +90,13 @@
       />
     {/each}
   </section>
+  <footer>
+    <p>
+      <a href="https://github.com/AyushmanTripathy/tik-tac-toe-ai"
+        >source code</a
+      > <br /> made by @AyushmanTripathy
+    </p>
+  </footer>
 </main>
 
 <style lang="scss">
@@ -97,7 +108,17 @@
 
     color: $light;
     background-color: $pri;
+    justify-content: space-between;
     user-select: none;
+  }
+  h1 {
+    $margin: 5vw;
+    margin-right: $margin;
+    margin-left: $margin;
+  }
+  footer,
+  header {
+    text-align: center;
   }
   section {
     @include section(60%, 60%);
@@ -116,7 +137,7 @@
     @include shadow;
 
     color: $light;
-    margin-bottom: 5vh;
+    margin-bottom: 3vh;
     border: none;
     border-radius: 3px;
     background-color: $sec;
@@ -138,5 +159,9 @@
     @include flex-center;
     background-color: $tri;
     border-radius: 10px;
+  }
+  a {
+    color: $hl;
+    text-decoration: none;
   }
 </style>
